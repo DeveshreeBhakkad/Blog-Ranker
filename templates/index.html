@@ -2,65 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BlogRanker</title>
+    <title>ReadFlow</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="container">
-    <h1>BlogRanker</h1>
-    <p class="subtitle">Read any topic </p>
+    <!-- HEADER -->
+    <header class="hero">
+        <h1 class="title">ReadFlow</h1>
+        <p class="subtitle">📖 Read what you like</p>
 
-    <form method="post">
-        <input type="text" name="query" placeholder="What do you want to learn?" required>
-        <button type="submit">Search</button>
-    </form>
+        <form method="post" class="search-box">
+            <input type="text" name="query" placeholder="What do you want to read about?" required>
+            <button type="submit">Search</button>
+        </form>
+    </header>
 
-    {% if results %}
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        {% if results %}
 
-        {% if results.Beginner %}
-        <h2>🟢 Start with Basics</h2>
-        <ul class="results">
-            {% for blog in results.Beginner %}
-                <li>
-                    <a href="{{ blog.link }}" target="_blank">
-                        {{ blog.title }}
-                    </a>
-                    <p>{{ blog.snippet }}</p>
-                </li>
-            {% endfor %}
-        </ul>
+            <!-- BEGINNER -->
+            {% if results.beginner %}
+            <section class="level">
+                <div class="level-header">
+                    <h2>🟢 Start with Basics</h2>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+
+                {% for blog in results.beginner %}
+                <div class="blog-card">
+                    <div class="blog-text">
+                        <span class="number">{{ loop.index }}.</span>
+                        <a href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
+                        <p>{{ blog.snippet }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- INTERMEDIATE -->
+            {% if results.intermediate %}
+            <section class="level">
+                <div class="level-header">
+                    <h2>🟡 Build Understanding</h2>
+                    <div class="stars">⭐⭐⭐☆☆</div>
+                </div>
+
+                {% for blog in results.intermediate %}
+                <div class="blog-card">
+                    <div class="blog-text">
+                        <span class="number">{{ loop.index }}.</span>
+                        <a href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
+                        <p>{{ blog.snippet }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- ADVANCED -->
+            {% if results.advanced %}
+            <section class="level">
+                <div class="level-header">
+                    <h2>🔴 Go Deeper</h2>
+                    <div class="stars">⭐⭐☆☆☆</div>
+                </div>
+
+                {% for blog in results.advanced %}
+                <div class="blog-card">
+                    <div class="blog-text">
+                        <span class="number">{{ loop.index }}.</span>
+                        <a href="{{ blog.link }}" target="_blank">{{ blog.title }}</a>
+                        <p>{{ blog.snippet }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+            {% endif %}
+
         {% endif %}
+    </main>
 
-        {% if results.Intermediate %}
-        <h2>🟡 Build Understanding</h2>
-        <ul class="results">
-            {% for blog in results.Intermediate %}
-                <li>
-                    <a href="{{ blog.link }}" target="_blank">
-                        {{ blog.title }}
-                    </a>
-                    <p>{{ blog.snippet }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+    <!-- FOOTER -->
+    <footer class="footer">
+        ⚠️ Note: Blog suggestions and difficulty levels are generated automatically.
+        Classification may not always be perfect.
+    </footer>
 
-        {% if results.Advanced %}
-        <h2>🔴 Go Deeper</h2>
-        <ul class="results">
-            {% for blog in results.Advanced %}
-                <li>
-                    <a href="{{ blog.link }}" target="_blank">
-                        {{ blog.title }}
-                    </a>
-                    <p>{{ blog.snippet }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
-    {% endif %}
-</div>
 </body>
 </html>

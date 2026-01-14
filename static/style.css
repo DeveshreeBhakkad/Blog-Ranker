@@ -1,73 +1,112 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+/* GLOBAL */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 30px;
-    background-color: #ffffff;
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0f0f0f;
+    color: #eaeaea;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-h1 {
-    margin-bottom: 5px;
+/* HEADER */
+.hero {
+    background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    margin: 0;
 }
 
 .subtitle {
-    color: #555;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #cccccc;
 }
 
-form {
-    margin-bottom: 30px;
+.search-box {
+    margin-top: 30px;
 }
 
-input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    font-size: 16px;
+.search-box input {
+    width: 320px;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
-button {
-    padding: 10px 16px;
-    font-size: 16px;
+.search-box button {
+    padding: 12px 18px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: none;
     cursor: pointer;
 }
 
-h2 {
-    margin-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #eee;
+/* CONTENT */
+.content {
+    flex: 1;
+    width: 70%;
+    margin-left: 60px;
+    padding: 40px 20px;
 }
 
-.results {
-    list-style: none;
-    padding: 0;
+/* LEVEL HEADERS */
+.level {
+    margin-bottom: 50px;
 }
 
-.results li {
-    background-color: #f4f6f8;
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level h2 {
     margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 6px;
 }
 
-.results a {
-    font-size: 17px;
-    font-weight: bold;
-    color: #1a73e8;
+.stars {
+    font-size: 18px;
+}
+
+/* BLOG CARD */
+.blog-card {
+    background-color: #1a1a1a;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.blog-text a {
+    color: #4da3ff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.results a:hover {
-    text-decoration: underline;
+.blog-text p {
+    margin: 6px 0 0;
+    color: #bbbbbb;
 }
 
-.results p {
-    margin-top: 8px;
-    color: #444;
-    font-size: 14px;
+.number {
+    margin-right: 6px;
+    color: #aaaaaa;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #161616;
+    color: #9e9e9e;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 13px;
 }
