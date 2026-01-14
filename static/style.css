@@ -1,34 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+.card {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
 }
 
-.container {
-    width: 50%;
-    margin: 100px auto;
-    text-align: center;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
+.card h4 {
+    margin: 0;
+    color: #1a0dab;
 }
 
-h1 {
-    margin-bottom: 5px;
+.card a {
+    text-decoration: none;
 }
 
-.subtitle {
+.card p {
+    color: #4d5156;
+}
+
+.card small {
     color: gray;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 70%;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
 }

@@ -1,19 +1,32 @@
 blogs = [
     {
-        "title": "Machine Learning Basics",
-        "content": "This blog explains machine learning concepts in simple terms for beginners."
+        "title": "Linear Regression Explained Simply",
+        "description": "A beginner-friendly guide to understanding linear regression with intuition.",
+        "link": "https://towardsdatascience.com/linear-regression-explained",
+        "content": "linear regression basics supervised learning model relationship variables",
+        "popularity": 85
     },
     {
-        "title": "Deep Learning Introduction",
-        "content": "Learn neural networks, deep learning fundamentals, and how models learn from data."
+        "title": "Linear Regression from Scratch",
+        "description": "Understand linear regression mathematically and implement it from scratch.",
+        "link": "https://medium.com/linear-regression-scratch",
+        "content": "linear regression mathematics gradient descent cost function",
+        "popularity": 70
     },
     {
-        "title": "Python for Data Science",
-        "content": "Covers Python libraries like NumPy, Pandas, and Matplotlib for data analysis."
+        "title": "Advanced Linear Regression Techniques",
+        "description": "Deep dive into regularization, assumptions, and optimization.",
+        "link": "https://analyticsvidhya.com/advanced-linear-regression",
+        "content": "ridge lasso regularization assumptions multicollinearity",
+        "popularity": 60
     },
     {
-        "title": "AI for Beginners",
-        "content": "An introduction to artificial intelligence, its applications, and real-world use cases."
+        "title": "Introduction to Artificial Intelligence",
+        "description": "What is AI? Applications, history, and future scope.",
+        "link": "https://ibm.com/ai-introduction",
+        "content": "artificial intelligence basics applications",
+        "popularity": 90
     }
 ]
+
 

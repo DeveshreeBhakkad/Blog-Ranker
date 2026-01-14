@@ -15,16 +15,21 @@
 </form>
 
 {% if results %}
-    <h2>Ranked Blogs</h2>
-    <ul>
-        {% for blog in results %}
-            <li>
-                <strong>{{ loop.index }}. {{ blog.title }}</strong>
-                — Score: {{ blog.score }}
-            </li>
-        {% endfor %}
-    </ul>
+<div class="results">
+    <h3>Search Results</h3>
+
+    {% for blog in results %}
+    <div class="card">
+        <a href="{{ blog.link }}" target="_blank">
+            <h4>{{ blog.title }}</h4>
+        </a>
+        <p>{{ blog.description }}</p>
+        <small>Relevance Score: {{ blog.score }}</small>
+    </div>
+    {% endfor %}
+</div>
 {% endif %}
+
 
 </body>
 </html>
