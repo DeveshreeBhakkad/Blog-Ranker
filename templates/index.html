@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>BlogRanker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <div class="container">
-        <h1>BlogRanker</h1>
-        <p class="subtitle">AI-powered blog ranking by relevance</p>
+<h1>BlogRanker</h1>
+<p>AI-powered blog ranking</p>
 
-        <form method="post">
-            <input type="text" name="query" placeholder="Search blogs by topic..." required>
-            <button type="submit">Search</button>
-        </form>
-    </div>
+<form method="post">
+    <input type="text" name="query" placeholder="Search blogs..." required>
+    <button type="submit">Search</button>
+</form>
+
+{% if results %}
+    <h2>Ranked Blogs</h2>
+    <ul>
+        {% for blog in results %}
+            <li>
+                <strong>{{ loop.index }}. {{ blog.title }}</strong>
+                — Score: {{ blog.score }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
 </body>
 </html>
